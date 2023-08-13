@@ -31,7 +31,7 @@ pipeline {
 
         stage('Deployment') {
             steps {
-                sh 'sshpass -p "surya" scp target/gamutgurus.war surya@172.17.0.2:/home/agent-1/apache-tomcat-8.5.38/webapps'
+                sh 'sshpass -p "surya" scp target/gamutgurus.war surya@172.17.0.2:/home/surya/apache-tomcat-8.5.38/webapps'
                 sh 'sshpass -p "surya" ssh surya@172.17.0.2 "/home/surya/apache-tomcat-8.5.38/bin/startup.sh"'
             }
         }
